@@ -1,0 +1,406 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>常见面试问题 | JyBlog</title><meta name="author" content="Jybzzz"><meta name="copyright" content="Jybzzz"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Java基础字符 操作少量字符数据用 String；单线程操作大量数据用 StringBuilder；多线程操作大量数据用 StringBuffer。  String  String 由 char[] 数组构成，使用了 final 修饰，对 String 进行改变时每次都会新生成一个 String 对象，然后把指针指向新的引用对象。  StringBuffer  StringBuffer可变并且线">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常见面试问题">
+<meta property="og:url" content="http://blog.jybzzz.cc/2024/04/29/%E9%9D%A2%E8%AF%95/index.html">
+<meta property="og:site_name" content="JyBlog">
+<meta property="og:description" content="Java基础字符 操作少量字符数据用 String；单线程操作大量数据用 StringBuilder；多线程操作大量数据用 StringBuffer。  String  String 由 char[] 数组构成，使用了 final 修饰，对 String 进行改变时每次都会新生成一个 String 对象，然后把指针指向新的引用对象。  StringBuffer  StringBuffer可变并且线">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.jybzzz.cc/assets/%E5%91%A8%E6%9D%B0%E4%BC%A69.jpg">
+<meta property="article:published_time" content="2024-04-29T11:57:39.310Z">
+<meta property="article:modified_time" content="2022-04-28T16:00:00.000Z">
+<meta property="article:author" content="Jybzzz">
+<meta property="article:tag" content="面试">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.jybzzz.cc/assets/%E5%91%A8%E6%9D%B0%E4%BC%A69.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://blog.jybzzz.cc/2024/04/29/%E9%9D%A2%E8%AF%95/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '常见面试问题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-04-29 00:00:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/assets/%E8%B7%AF%E9%A3%9E.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="JyBlog"><span class="site-name">JyBlog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">常见面试问题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-29T11:57:39.310Z" title="发表于 2024-04-29 19:57:39">2024-04-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-04-28T16:00:00.000Z" title="更新于 2022-04-29 00:00:00">2022-04-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="常见面试问题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h1><h2 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h2><ul>
+<li>操作少量字符数据用 String；单线程操作大量数据用 StringBuilder；多线程操作大量数据用 StringBuffer。</li>
+</ul>
+<p>String</p>
+<ul>
+<li>String 由 char[] 数组构成，使用了 final 修饰，对 String 进行改变时每次都会新生成一个 String 对象，然后把指针指向新的引用对象。</li>
+</ul>
+<p>StringBuffer</p>
+<ul>
+<li>StringBuffer可变并且线程安全</li>
+</ul>
+<p>StringBuilder</p>
+<ul>
+<li>StringBuilder可变但线程不安全。</li>
+</ul>
+<h2 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h2><p>equals和&#x3D;&#x3D;</p>
+<ul>
+<li>quals是Object的方法，默认比较的是对象的地址值。可以通过重写从而比较的对象的值。如String</li>
+<li>“&#x3D;&#x3D;”是运算符，如果是基本数据类型，则比较存储的值；如果是引用数据类型，则比较所指向对象的地址值。</li>
+</ul>
+<p>equals和hashCode</p>
+<ul>
+<li>hashCode()默认是通过地址来计算hash码，可以通过重写从而通过对象的值计算hash码</li>
+<li>若两个对象相等，他们的hashCode和equals一定相等</li>
+<li>hashCode相等的两个对象未必相等</li>
+<li>重写equals()必须重写hashCode()，比如在HashMap中，key如果是String类型，String如果只重写了equals（）而没有重写hashcode（）的话，则两个equals()比较为true的key，因为hashcode不同导致两个key没有出现在一个索引上，就会出现map中存在两个相同的key</li>
+</ul>
+<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><ul>
+<li>HashMap在Jdk1.8以后是基于数组+链表+红黑树来实现的，特点是，key不能重复，可以为null，线程不安全</li>
+</ul>
+<p>扩容机制</p>
+<ul>
+<li>HashMap的默认容量为16，默认的负载因子为0.75，当HashMap中元素个数超过容量乘以负载因子的个数时，就创建一个大小为前一次两倍的新数组，再将原来数组中的数据复制到新数组中。当数组长度到达64且链表长度大于8时，链表转为红黑树</li>
+</ul>
+<p>存取原理</p>
+<ul>
+<li>计算key的hash值，然后进行二次hash，根据二次hash结果找到对应的索引位置</li>
+<li>如果这个位置有值，先进性equals比较，若结果为true则取代该元素，若结果为false，就使用高低位平移法将节点插入链表（JDK8以前使用头插法，但是头插法在并发扩容时可能会造成环形链表或数据丢失，而高低位平移发会发生数据覆盖的情况）</li>
+</ul>
+<p>怎么用线程安全的HashMap</p>
+<ul>
+<li>使用ConcurrentHashMap</li>
+<li>使用HashTable</li>
+<li>Collections.synchronizedHashMap()方法</li>
+</ul>
+<p>ConcurrentHashMap原如何保证的线程安全</p>
+<ul>
+<li>JDK1.7:使用分段锁，将一个Map分为了16个段，每个段都是一个小的hashmap，每次操作只对其中一个段加锁</li>
+<li>JDK1.8:采用CAS+Synchronized保证线程安全，每次插入数据时判断在当前数组下标是否是第一次插入，是就通过CAS方式插入，然后判断f.hash是否&#x3D;-1，是的话就说明其他线程正在进行扩容，当前线程也会参与扩容；删除方法用了synchronized修饰，保证并发下移除元素安全</li>
+</ul>
+<p>HashTable与HashMap的区别</p>
+<ul>
+<li>HashTable的每个方法都用synchronized修饰，因此是线程安全的，但同时读写效率很低</li>
+<li>HashTable的Key不允许为null</li>
+<li>HashTable只对key进行一次hash，HashMap进行了两次Hash</li>
+<li>HashTable底层使用的数组加链表</li>
+</ul>
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><p>ArrayList和LinkedList的区别</p>
+<ul>
+<li>ArratList的底层使用动态数组，默认容量为10，当元素数量到达容量时，生成一个新的数组，大小为前一次的1.5倍，然后将原来的数组copy过来；因为数组在内存中是连续的地址，所以ArrayList查找数据更快，由于扩容机制添加数据效率更低</li>
+<li>LinkedList的底层使用链表，在内存中是离散的，没有扩容机制；LinkedList在查找数据时需要从头遍历，所以查找慢，但是添加数据效率更高</li>
+</ul>
+<p>如何保证ArrayList的线程安全</p>
+<ul>
+<li>使用collentions.synchronizedList（）方法为ArrayList加锁</li>
+<li>使用Vector，Vector底层与Arraylist相同，但是每个方法都由synchronized修饰，速度很慢</li>
+<li>使用juc下的CopyOnWriterArrayList，该类实现了读操作不加锁，写操作时为list创建一个副本，期间其它线程读取的都是原本list，写操作都在副本中进行，写入完成后，再将指针指向副本。</li>
+</ul>
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>什么是反射</p>
+<ul>
+<li>反射是通过获取类的class对象，然后动态的获取到这个类的内部结构（成员变量、方法、构造器等），从而动态的去操作类的属性和方法。</li>
+</ul>
+<p>获取class对象的方法有</p>
+<ul>
+<li>class.forName(类路径)</li>
+<li>类.class()</li>
+<li>对象的getClass（）</li>
+</ul>
+<p>应用场景</p>
+<ul>
+<li>做框架</li>
+<li>要操作权限不够的类属性和方法时</li>
+<li>实现自定义注解时</li>
+<li>动态加载第三方jar包时</li>
+<li>按需加载类</li>
+<li>节省编译和初始化时间</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>面向对象和面向过程的区别</p>
+<ul>
+<li>面向对象有封装、继承、多态性的特性，所以相比面向过程易维护、易复用、易扩展</li>
+<li>但是因为类调用时要实例化，所以开销大性能比面向过程低</li>
+</ul>
+<p>多态的作用</p>
+<ul>
+<li>多态的实现要有继承、重写，父类引用指向子类对象。</li>
+<li>可以消除类型之间的耦合关系，增加类的可扩充性和灵活性。</li>
+</ul>
+<p>Java创建对象得五种方式</p>
+<ol>
+<li>new</li>
+<li>Class.newInstance</li>
+<li>Constructor.newInstance</li>
+<li>Clone</li>
+<li>反序列化</li>
+</ol>
+<p>深拷贝和浅拷贝</p>
+<ul>
+<li>浅拷贝：浅拷贝只复制某个对象的引用，而不复制对象本身，新旧对象还是共享同一块内存</li>
+<li>深拷贝：深拷贝会创造一个一摸一样的对象，新对象和原对象不共享内存，修改新对象不会改变原对对象。</li>
+</ul>
+<h1 id="Java多线程"><a href="#Java多线程" class="headerlink" title="Java多线程"></a>Java多线程</h1><h1 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h1><h2 id="分页插件的原理"><a href="#分页插件的原理" class="headerlink" title="分页插件的原理"></a>分页插件的原理</h2><ul>
+<li>首先分页参数放到ThreadLocal中</li>
+<li>拦截器拦截执行的sql，根据数据库类型添加对应的分页语句重写sql</li>
+</ul>
+<p>例如</p>
+<ul>
+<li>select * from table where xxx 会转为 select count(*) from table where xxx 和 select * from where xxx limit</li>
+<li>从而计算出total总条数、pageNum当前页码、pageSize每页大小、以及当前页数据、是否为首尾页、总页数等信息</li>
+</ul>
+<h2 id="ResultType和ResultMap"><a href="#ResultType和ResultMap" class="headerlink" title="ResultType和ResultMap"></a>ResultType和ResultMap</h2><ul>
+<li>ResultType：指定映射类型，只要查询的字段名和类型的属性名匹配可以自动映射。</li>
+<li>ResultMap：自定义映射规则，当查询的字段名和映射类型的属性不匹配时可以通过ResultMap自定义映射规则也可以实现一对多、—对一映射。</li>
+</ul>
+<p>#{}和${}</p>
+<ul>
+<li>#{}：属于占位符，相当于？，可以防止sql注入</li>
+<li>${}：用于在动态sql中拼接字符串，可能导致sql注入</li>
+</ul>
+<h1 id="cookie、session、token"><a href="#cookie、session、token" class="headerlink" title="cookie、session、token"></a>cookie、session、token</h1><h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><p><img src="https://gitee.com/lujiaye/picture-bed/raw/master/img/202404071346513.png" alt="image-20240407134601296"></p>
+<ul>
+<li>特点：存储在客户端、帮助在客户端和服务器之间维护状态信息</li>
+<li>缺点：有被窜改的风险、容量限制为4kb，用户可以通过浏览器禁用cookie</li>
+</ul>
+<h2 id="session"><a href="#session" class="headerlink" title="session"></a>session</h2><p> <img src="https://gitee.com/lujiaye/picture-bed/raw/master/img/202404071349753.png" alt="image-20240407134933662"></p>
+<ul>
+<li>特点：存储在服务器、可以保存对象</li>
+<li>缺点：占用服务器资源、扩展性差(分布式集群)、依然需要依赖cookie、存在跨越限制</li>
+</ul>
+<h2 id="token"><a href="#token" class="headerlink" title="token"></a>token</h2><p>jwt令牌（json web token）</p>
+<ul>
+<li>由三段信息组成：header.payload.signature<ul>
+<li>header(头)：包含了签名算法和token类型</li>
+<li>payload(负载数据)：包含了数据</li>
+<li>signature(签名密钥)：包含了经过base64编码后的header和payload，以及私钥</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/lujiaye/picture-bed/raw/master/img/202404071425359.png" alt="image-20240407142556278"></p>
+<h1 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h1><h2 id="常见的存储引擎"><a href="#常见的存储引擎" class="headerlink" title="常见的存储引擎"></a>常见的存储引擎</h2><ul>
+<li>InnoDB1</li>
+<li>支持事务。</li>
+<li>使用的锁粒度默认为行级锁，可以支持更高的并发;也支持表锁。</li>
+<li>支持外键约束;外键约束其实降低了表的查询速度，增加了表之间的耦合度。</li>
+<li>MyISAM<ul>
+<li>不提供事务支持</li>
+<li>只支持表级锁</li>
+<li>不支持外键</li>
+</ul>
+</li>
+<li>memory<ul>
+<li>数据存储在内存中总结</li>
+</ul>
+</li>
+</ul>
+<p>总结·</p>
+<ul>
+<li>MylISAM管理非事务表，提供高速存储和检索以及全文搜索能力，如果在应用中执行大量select操作，应该选择MyISAM</li>
+<li>InnoDB用于事务处理，具有ACID事务支持等特性，如果在应用中执行大量insert和update操作，应该选择InnoDB</li>
+</ul>
+<h2 id="建表时的注意事项"><a href="#建表时的注意事项" class="headerlink" title="建表时的注意事项"></a>建表时的注意事项</h2><ol>
+<li>注意选择存储引擎，如果要支持事务需要选择lnnoDB。</li>
+<li>注意字段类型的选择<ul>
+<li>对于日期类型如果要记录时分秒建议使用datetime，只记录年月日使用date类型</li>
+<li>对于字符类型的选择，固定长度字段选择char，不固定长度的字段选择varchar，varchart比char节省空间但速度没有char快;</li>
+<li>对于内容介绍类的长广文本字段使用text或longtext类型;</li>
+<li>如果存储图片等二进制数据使用blob或longblob类型;</li>
+<li>对金额字段建议使用DECIMAL;</li>
+<li>对于数值类型的字段在确保取值范围足够的前提下尽量使用占用空间较小的类型，</li>
+</ul>
+</li>
+<li>主键字段建议使用自然主键，不要有业务意义，建议使用int unsigned类型，特殊场景使用bigint类型。</li>
+<li>如果要存储text、blob字段建议单独建一张表，使用外键关联。</li>
+<li>尽量不要定义外键，保证表的独立性，可以存在外键意义的字段。</li>
+<li>设置字段默认值，比如:状态、创建时间等。</li>
+<li>每个字段写清楚注释。</li>
+<li>注意字段的约束，比如:非空、唯一、主键等。</li>
+</ol>
+<h2 id="树形表查询"><a href="#树形表查询" class="headerlink" title="树形表查询"></a>树形表查询</h2><p>树型表的标记字段是什么？</p>
+<ul>
+<li>树型表的标记字段是parentid即父结点的id。</li>
+</ul>
+<p>如何查询Mysql树型表？</p>
+<ol>
+<li>当层级固定时可以用表的自链接进行查询。</li>
+<li>如果想灵活查询每个层级可以使用mysql递归方法，使用with RECURSIVE 实现。（with RECURSIVE是mysql8之后才出现的）</li>
+</ol>
+<h1 id="数据对象模型"><a href="#数据对象模型" class="headerlink" title="数据对象模型"></a>数据对象模型</h1><p><img src="https://gitee.com/lujiaye/picture-bed/raw/master/img/202404101546837.png" alt="image-20240410154617740"></p>
+<p><img src="https://gitee.com/lujiaye/picture-bed/raw/master/img/202404101547295.png" alt="image-20240410154753256"></p>
+<p><img src="https://gitee.com/lujiaye/picture-bed/raw/master/img/202404101548059.png" alt="image-20240410154802025"></p>
+<h2 id="VO"><a href="#VO" class="headerlink" title="VO"></a>VO</h2><ul>
+<li>VO（View Object）视图对象，<em><strong>通常用于表示一个业务实体或者页面展示的内容。</strong></em></li>
+<li>通常用在前端和controller层的交互</li>
+<li>如果是一个DTO对应一个VO，则DTO等价于VO，但是如果一个DTO对应多个VO，则展示层需要把VO转换为服务层对应方法所要求的DTO</li>
+<li>VO通常包含了多个属性，并且这些属性的类型和名称与业务相关。</li>
+<li>VO并不一定与数据库中的表结构相同，也不一定包含所有的属性。</li>
+</ul>
+<h2 id="DTO"><a href="#DTO" class="headerlink" title="DTO"></a>DTO</h2><ul>
+<li>DTO（Data Transfer Object）数据传输对象</li>
+<li>通常用在controller层和service层</li>
+<li>如我们一张表有100个字段，那么对应的PO就有100个属性。但是我们界面上只要显示10个字段，客户端用WEB service来获取数据，没有必要把整个PO对象传递到客户端，这时我们就可以用只有这10个属性的DTO来传递结果到客户端，这样也不会暴露服务端表结构.到达客户端以后，如果用这个对象来对应界面显示，那此时它的身份就转为VO。</li>
+</ul>
+<h2 id="PO"><a href="#PO" class="headerlink" title="PO"></a>PO</h2><ul>
+<li>PO（Persistent Object）持久化对象，通常用于<em><strong>表示数据库中的表结构以及与之对应的实体类</strong></em></li>
+<li>通常用在dao层（数据访问层）</li>
+<li>PO通常包含了多个属性和对应的getter&#x2F;setter方法，属性的类型和名称与表结构相对应。</li>
+<li>将数据库中的数据映射为Java对象，方便程序对数据的操作。</li>
+</ul>
+<h1 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h1><h2 id="项目开发流程"><a href="#项目开发流程" class="headerlink" title="项目开发流程"></a>项目开发流程</h2><ol>
+<li>产品人员设计产品原型。</li>
+<li>讨论需求。</li>
+<li>分模块设计接口。</li>
+<li>出接口文档。</li>
+<li>将接口文档给到前端人员，前后端分离开发。</li>
+<li>开发完毕进行测试。</li>
+<li>测试完毕发布项目，由运维人员进行部署安装。</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://blog.jybzzz.cc">Jybzzz</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://blog.jybzzz.cc/2024/04/29/%E9%9D%A2%E8%AF%95/">http://blog.jybzzz.cc/2024/04/29/%E9%9D%A2%E8%AF%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://blog.jybzzz.cc" target="_blank">JyBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a></div><div class="post_share"><div class="social-share" data-image="/assets/%E5%91%A8%E6%9D%B0%E4%BC%A69.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/04/29/Vue/" title="前端高级"><img class="cover" src="/assets/%E8%B7%AF%E9%A3%9E5.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">前端高级</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/assets/%E8%B7%AF%E9%A3%9E.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jybzzz</div><div class="author-info__description">我一路向北</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">Java基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6"><span class="toc-number">1.1.</span> <span class="toc-text">字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#equals"><span class="toc-number">1.2.</span> <span class="toc-text">equals</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap"><span class="toc-number">1.3.</span> <span class="toc-text">HashMap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayList"><span class="toc-number">1.4.</span> <span class="toc-text">ArrayList</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84"><span class="toc-number">1.5.</span> <span class="toc-text">反射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">1.6.</span> <span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">Java多线程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mybatis"><span class="toc-number">3.</span> <span class="toc-text">Mybatis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E9%A1%B5%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-number">3.1.</span> <span class="toc-text">分页插件的原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ResultType%E5%92%8CResultMap"><span class="toc-number">3.2.</span> <span class="toc-text">ResultType和ResultMap</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cookie%E3%80%81session%E3%80%81token"><span class="toc-number">4.</span> <span class="toc-text">cookie、session、token</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie"><span class="toc-number">4.1.</span> <span class="toc-text">cookie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#session"><span class="toc-number">4.2.</span> <span class="toc-text">session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#token"><span class="toc-number">4.3.</span> <span class="toc-text">token</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mysql"><span class="toc-number">5.</span> <span class="toc-text">Mysql</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="toc-number">5.1.</span> <span class="toc-text">常见的存储引擎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%BA%E8%A1%A8%E6%97%B6%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">5.2.</span> <span class="toc-text">建表时的注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91%E5%BD%A2%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">5.3.</span> <span class="toc-text">树形表查询</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B"><span class="toc-number">6.</span> <span class="toc-text">数据对象模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#VO"><span class="toc-number">6.1.</span> <span class="toc-text">VO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DTO"><span class="toc-number">6.2.</span> <span class="toc-text">DTO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PO"><span class="toc-number">6.3.</span> <span class="toc-text">PO</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96-1"><span class="toc-number">7.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="toc-number">7.1.</span> <span class="toc-text">项目开发流程</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/04/29/%E9%9D%A2%E8%AF%95/" title="常见面试问题"><img src="/assets/%E5%91%A8%E6%9D%B0%E4%BC%A69.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="常见面试问题"/></a><div class="content"><a class="title" href="/2024/04/29/%E9%9D%A2%E8%AF%95/" title="常见面试问题">常见面试问题</a><time datetime="2024-04-29T11:57:39.310Z" title="发表于 2024-04-29 19:57:39">2024-04-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/29/Vue/" title="前端高级"><img src="/assets/%E8%B7%AF%E9%A3%9E5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端高级"/></a><div class="content"><a class="title" href="/2024/04/29/Vue/" title="前端高级">前端高级</a><time datetime="2024-04-29T11:56:43.323Z" title="发表于 2024-04-29 19:56:43">2024-04-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/29/Mysql/" title="Mysql"><img src="/assets/%E8%B7%AF%E9%A3%9E7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mysql"/></a><div class="content"><a class="title" href="/2024/04/29/Mysql/" title="Mysql">Mysql</a><time datetime="2024-04-29T11:55:25.351Z" title="发表于 2024-04-29 19:55:25">2024-04-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/29/HtmlCssJs/" title="前端基础"><img src="/assets/%E5%91%A8%E6%9D%B0%E4%BC%A65.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端基础"/></a><div class="content"><a class="title" href="/2024/04/29/HtmlCssJs/" title="前端基础">前端基础</a><time datetime="2024-04-29T11:53:53.519Z" title="发表于 2024-04-29 19:53:53">2024-04-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/29/Java%E7%AC%94%E8%AE%B0/" title="Java"><img src="/assets/%E8%B7%AF%E9%A3%9E4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java"/></a><div class="content"><a class="title" href="/2024/04/29/Java%E7%AC%94%E8%AE%B0/" title="Java">Java</a><time datetime="2024-04-29T08:00:35.530Z" title="发表于 2024-04-29 16:00:35">2024-04-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By Jybzzz</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo" title=""><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题使用Butterfly" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body></html>
