@@ -155,3 +155,9 @@
     text-shadow: #5636ed 0 0 5px;
   }
 }
+
+/* 翻页按钮居中 */
+#pagination {
+  width: 100%;
+  margin: auto;
+}
